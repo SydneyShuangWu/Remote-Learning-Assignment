@@ -1,5 +1,4 @@
 //Basic
-
 //Q1
 let Pi: Double = 3.14
 
@@ -50,6 +49,8 @@ let remain = 10 % 3
 //Q11
 // It is not allowed to assign value of type 'String' to type 'Int'.
 
+//----------------------------------------------------------------------
+
 // Collection
 //Q1
 var myFriends = [String]()
@@ -61,7 +62,6 @@ myFriends += ["Ian", "Bomi", "Kevin"]
 myFriends.append("Michael")
 
 //Q4
-//insert(element, at:)
 myFriends.remove(at: 2)
 myFriends.insert("Kevin", at: 0)
 
@@ -69,8 +69,6 @@ myFriends.insert("Kevin", at: 0)
 for friends in myFriends {
     print(friends)
 }
-
-print("------")
 
 //Q6
 //myFriends[5] leads to a fatal error since the index is out of range.
@@ -96,28 +94,77 @@ myCountryNumber.updateValue(0, forKey: "GB")
 //Q13
 //Use removeValue(forKey: "") OR Dict[ ] = nil
 
+//----------------------------------------------------------------------
+
 // Control Flow
 //Q1
-let lottoNumbers = [10, 9, 8, 7, 6, 5]
+var lottoNumbers = [10, 9, 8, 7, 6, 5]
 for i in lottoNumbers[3...5] {
     print(i)
 }
 
-print("------")
+//Q2
+//1) Use the method reversed
+let reversedLotto = lottoNumbers.reversed()
 
-//Q2 (?)
-// The method randomElement can help
-var randomCount = Int.random(in: 1...6)
-
-for _ in 1...randomCount {
-    print(lottoNumbers.randomElement()!)
+for i in reversedLotto {
+    print(i)
 }
 
-print("------")
+//2) Use the method removeLast and remove
+lottoNumbers.removeLast()
+lottoNumbers.remove(at: 1)
+lottoNumbers.remove(at: 2)
+
+for i in lottoNumbers {
+    print(i)
+}
 
 //Q3
+//1)
+var i = 5
+while i <= 10 {
+    print(i)
+    i += 1
+}
+
+//2)
+var j = 10
+while j >= 6 {
+    if j == 9 {
+        j -= 1
+        continue
+    }
+    if j == 7 {
+        j -= 1
+        continue
+    }
+    print(j)
+    j -= 1
+}
 
 //Q4
+//1)
+var k = 5
+repeat {
+    print(k)
+    k += 1
+} while k <= 10
+
+//2)
+var l = 10
+repeat {
+    if l == 9 {
+        l -= 1
+        continue
+    }
+    if l == 7 {
+        l -= 1
+        continue
+    }
+    print(l)
+    l -= 1
+} while l >= 6
 
 //Q5
 /*
@@ -134,7 +181,6 @@ if isRaining {
 }
 
 //Q7
-var ourJob: [String: Int] = ["Member": 1, "Team Member": 2, "Manager": 3, "Director": 4]
 var jobLevel = 8
 
 switch jobLevel {
@@ -150,13 +196,16 @@ default:
     print("We don't have this job.")
 }
 
+//----------------------------------------------------------------------
+
+//Function
 //Q1
 func greet(person: String) -> String {
     return "Hello, " + person
 }
 
 //Q2
-func multiply(for a: Int, b: Int = 10) {
+func multiply(a: Int, b: Int = 10) {
     print(a*b)
 }
 
